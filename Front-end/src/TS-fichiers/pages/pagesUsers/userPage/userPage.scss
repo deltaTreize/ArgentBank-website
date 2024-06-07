@@ -1,0 +1,97 @@
+.main {
+  flex: 1;
+}
+.bg-dark {
+	background-color: #ccc;
+	min-height: 84vh;
+	.header {
+		color: #fff;
+		margin-bottom: 2rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+		width: 100%;
+		.virementButton{
+			position: absolute;
+			right: 11%;
+			bottom: 0;
+		}
+	}
+	.allInfo-wrapper {
+		display: flex;
+		justify-content: space-between;
+		margin: 100px 20px;
+	}
+	.account-wrapper {
+		width: 55%;
+		margin-left: 106px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 20px;
+	}
+	.portefeuille-wrapper {
+		margin-right: 106px;
+		width: 25%;
+		background: #2C3E50;
+		color: #fff;
+		box-sizing: border-box;
+		border-radius: 10px;
+		padding:  30px 2px;
+	}
+	.account-userPage {
+		display: flex;
+		align-items: center;
+		border: 1px solid black;
+		border-radius: 15px;
+		background-color: #ffffff;
+		width: 100%;
+		margin: 0 auto;
+		flex-direction: column;
+		padding: 1.5rem;
+		padding-left: 0;
+		box-sizing: border-box;
+		text-align: left;
+		@media (min-width: 720px) {
+			flex-direction: row;
+		}
+		&-wrapper {
+			width: 100%;
+			flex: 1;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 20px;
+			.account-title {
+				margin: 0;
+				padding: 0;
+				font-size: 150%;
+				font-weight: bold;
+			}
+			.account-amount {
+				margin: 0;
+				font-size: 250%;
+				font-weight: bold;
+			}
+			.account-amount-nbAccount {
+				margin: 0;
+				font-size: 150%;
+			}
+		}
+		.cta {
+			@media (min-width: 720px) {
+				flex: 0;
+				.transactions-button {
+					width: 85%;
+				}
+			}
+			a {
+        width: 100%;
+				@media (min-width: 720px) {
+					width: 200px;
+				}
+			}
+		}
+	}
+}

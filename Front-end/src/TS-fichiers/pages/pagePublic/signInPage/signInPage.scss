@@ -1,0 +1,71 @@
+main{
+	position: relative;
+	min-height: 84vh;
+}
+.bg-blur {
+	position: absolute;
+	background-image: url('../../../../../public/assets/bank-tree.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	filter: blur(10px);
+	-webkit-filter: blur(10px);
+	height: 100%;
+	width: 100%;
+}
+	.sign-in-content {
+		box-sizing: border-box;
+		background-color: white;
+		width: 300px;
+		padding: 30px;
+		position: absolute;
+		left: 50%;
+		top: 40%;
+		transform: translate(-50%, -50%);
+		.title-signup{
+			font-size: 38px;
+		}
+		.sign-in-icon {
+			font-size: 30px;
+		}
+		.input-remember {
+			display: flex;
+			#remember-me {
+				cursor: pointer;
+			}
+			label {
+				margin-left: 0.25rem;
+			}
+		}
+		.input-wrapper {
+			display: flex;
+			flex-direction: column;
+			text-align: left;
+			margin-bottom: 1rem;
+			label {
+				font-weight: bold;
+        position: relative;
+        .show{
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 4%;
+          height: 50%;
+          right: 8%;
+          top: 48%;
+          margin: 0;
+          cursor: pointer;
+        }
+			}
+			input {
+				padding: 5px;
+				font-size: 16px;
+				margin-top: 5px;
+				width: 93%;
+			}
+		}
+		a {
+			margin-top: 15px;
+		}
+	}
+
