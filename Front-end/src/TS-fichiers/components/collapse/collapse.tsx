@@ -9,7 +9,7 @@ interface CollapseProps {
 	date: string;
 	description: string;
 	montant: number;
-	operationId: string;
+	operationId: number;
 	idAccount: number;
 	category: string;
 }
@@ -23,7 +23,7 @@ export function Collapse({ title, date, description, montant, operationId, idAcc
 	const [pencilDescriptionDisplay, setPencilDescriptionDisplay] = useState<boolean>(true);
 	const [pencilCategoryDisplay, setPencilCategoryDisplay] = useState<boolean>(true);
 	const token = useSelector((state:RootState) => state.token.token);
-	const { userId } = useParams();
+	const userId = useSelector((state:RootState) => state.user.id);
 
 	
 
@@ -41,7 +41,7 @@ export function Collapse({ title, date, description, montant, operationId, idAcc
 			description: descriptionValue,
 		});
 		fetch(
-			"https://argentbank-bydelta13-api-c9d02df5fde5.herokuapp.com/api/v1/user/account/operations/description",
+			"http://localhost:3001/api/v1/user/account/operations/description",
 			{
 				method: "PUT",
 				body: bodyContent,
@@ -63,7 +63,7 @@ export function Collapse({ title, date, description, montant, operationId, idAcc
 			category: categoryValue,
 		});
 		fetch(
-			"https://argentbank-bydelta13-api-c9d02df5fde5.herokuapp.com/api/v1/user/account/operations/category",
+			"http://localhost:3001/api/v1/user/account/operations/category",
 			{
 				method: "PUT",
 				body: bodyContent,

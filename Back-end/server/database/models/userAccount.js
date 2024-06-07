@@ -7,9 +7,6 @@ const accountSchema = new mongoose.Schema(
 			name: String,
 			nbAccount: String, 
 			solde: Number,
-      visible: Boolean,
-			cardNumber: String,
-			cardDate: String,
 			operations: [Operation.schema],
 		},
 );

@@ -1,11 +1,9 @@
 import {
 	LogoutAction,
-	SearchState,
 	SignInAction,
 	TokenOffAction,
 	TokenOnAction,
 	UserState,
-	searchAction,
 } from "./typeAction";
 
 export function Login(data: UserState): SignInAction {
@@ -17,10 +15,7 @@ export function Login(data: UserState): SignInAction {
 			lastName: data.lastName,
 			userName: data.userName,
 			email: data.email,
-			createdAt: data.createdAt,
 			account: data.account,
-			role: data.role,
-			picture: data.picture,
 		},
 	};
 }
@@ -44,15 +39,3 @@ export function TokenOff(): TokenOffAction {
 	};
 }
 
-export function changeSearch(data: SearchState): searchAction {
-	return {
-		type: "changeSearch",
-		payload: {
-			searchName: data.searchName,
-			sortBy: data.sortBy,
-			sortOrder: data.sortOrder,
-			page: data.page,
-			limit: data.limit,
-		},
-	};
-}

@@ -13,14 +13,10 @@ export function EditPage() {
 	const firstName = useSelector((state: RootState) => state.user.firstName);
 	const lastName = useSelector((state: RootState) => state.user.lastName);
 	const email = useSelector((state: RootState) => state.user.email);
-	const createdAt = useSelector((state: RootState) => state.user.createdAt);
-	const role = useSelector((state: RootState) => state.user.role);
-	const picture = useSelector((state: RootState) => state.user.picture);
 	const token = useSelector((state: RootState) => state.token.token);
 	const dispatch:Dispatch<AuthActionTypes>= useDispatch();
 
 	const [userNameValue, setUserNameValue] = useState<string>(userName);
-	const [pictureValue, setPictureValue] = useState<string>(picture);
 
 	async function handleChange() {
 		let headersList = {
@@ -31,10 +27,9 @@ export function EditPage() {
 
 		let bodyContent = JSON.stringify({
 			userName: userNameValue,
-			picture: pictureValue
 		});
 		fetch(
-			"https://argentbank-bydelta13-api-c9d02df5fde5.herokuapp.com/api/v1/user/profile",
+			"http://localhost:3001/api/v1/user/profile",
 			{
 				method: "PUT",
 				headers: headersList,
@@ -47,56 +42,11 @@ export function EditPage() {
 			lastName: lastName,
 			userName: userNameValue,
 			email: email,
-			createdAt: createdAt,
-			role: role,
-			picture: pictureValue,
 			account: [],
 		};
 		dispatch(Login(userData));
 		setUserNameValue("");
-		setPictureValue("");
 	}
-
-	function uploadPicture(event: { target: { files: any[]; }; }) {
-    const file = event.target.files ? event.target.files[0] : null;
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = async () => {
-            if (typeof reader.result === 'string') {
-                const image = new Image();
-                image.src = reader.result;
-                image.onload = () => {
-                    const canvas = document.createElement('canvas');
-                    const maxWidth = 40;
-                    const maxHeight = 40;
-                    let width = image.width;
-                    let height = image.height;
-
-                    // Redimensionner l'image si elle dépasse les dimensions maximales
-                    if (width > maxWidth || height > maxHeight) {
-                        const ratio = Math.min(maxWidth / width, maxHeight / height);
-                        width *= ratio;
-                        height *= ratio;
-                    }
-
-                    canvas.width = width;
-                    canvas.height = height;
-                    const ctx = canvas.getContext('2d');
-                    ctx?.drawImage(image, 0, 0, width, height);
-
-                    // Convertir le canvas en base64
-                    const base64String = canvas.toDataURL('image/jpeg');
-
-                    console.log("base64", base64String);
-                    if (typeof base64String === 'string') {
-                        setPictureValue(base64String);
-                    }
-                };
-            }
-        };
-        reader.readAsDataURL(file);
-    }
-};
 
 
 	return (
@@ -130,19 +80,6 @@ export function EditPage() {
 							<p className="infos-edit-title">Prénom</p>
 							<p className="infos-edit-content">{firstName}</p>
 						</div>
-						<div className="infos-edit">
-							<p className="infos-edit-title">votre conseiller</p>
-							<p className="infos-edit-content">{"DUPOND Jean"}</p>
-						</div>
-						<div className="infos-edit">
-							<p className="infos-edit-title">date de création</p>
-							<p className="infos-edit-content">{createdAt.slice(0, 10)}</p>
-						</div>
-						<label htmlFor="picture">	
-						photo de profil
-						<input type="file" id="picture" accept="image/*" onChange={ ()=> uploadPicture }/>
-						</label>
-
 					</div>
 					<div className="edit-buttons">
 						<input

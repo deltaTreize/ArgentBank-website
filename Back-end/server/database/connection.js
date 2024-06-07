@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
-const dotEnv = require("dotenv");
-dotEnv.config();
-const databaseUrl = "mongodb+srv://ludoleblond13:Aujourdui1+@cluster0.vhjcddm.mongodb.net/argentBank?retryWrites=true&w=majority";
+const databaseUrl =
+  process.env.DATABASE_URL || 'mongodb://localhost/argentBankDB'
+
 module.exports = async () => {
   try {
-    await mongoose.connect(databaseUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+    await mongoose.connect(databaseUrl, { useNewUrlParser: true })
     console.log('Database successfully connected')
   } catch (error) {
     console.error(`Database Connectivity Error: ${error}`)

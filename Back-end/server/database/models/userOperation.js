@@ -5,8 +5,8 @@ const operationSchema = new mongoose.Schema(
   {
     date: String,
     title: String,
-    description: String,
     montant: Number,
+    description: String,
     category: String,
   },);
 module.exports = mongoose.model("Operation", operationSchema);

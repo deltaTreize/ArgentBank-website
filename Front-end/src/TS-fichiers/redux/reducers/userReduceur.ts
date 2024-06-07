@@ -9,9 +9,6 @@ let initialState: UserState = {
 	lastName: "",
 	userName: "",
 	email: "",
-	createdAt: "",
-	role: "",
-	picture: "",
 	account: [],
 };
 
@@ -25,10 +22,7 @@ const userReducer = (	state = initialState,	action: AuthActionTypes ): UserState
 				lastName: action.payload.lastName,
 				userName: action.payload.userName,
 				email: action.payload.email,
-				createdAt: action.payload.createdAt,
 				account: action.payload.account,
-				role: action.payload.role,
-				picture: action.payload.picture,
 			};
 
 		case "LOGOUT":

@@ -9,16 +9,11 @@ export interface LogoutAction {
 
 export interface TokenOnAction {
 	type: "TOKEN_ON";
-	payload:{token:string}
+	payload: { token: string };
 }
 
 export interface TokenOffAction {
 	type: "TOKEN_OFF";
-}
-
-export interface searchAction{
-	type: "changeSearch";
-	payload: SearchState
 }
 
 export interface TokenState {
@@ -31,29 +26,33 @@ export interface UserState {
 	lastName: string;
 	userName: string;
 	email: string;
-	createdAt: string;
-	role: string;
-	picture: string;
-	account: [];
+	account: Account[];
+}
+
+export interface operations{
+	_id: number,
+	date: string,
+	title: string,
+	montant: number,
+	description: string,
+	category: string,
+}
+
+export interface Account {
+	_id: number;
+	name: string;
+	nbAccount: string;
+	solde: number;
+	operations: operations[];
 }
 
 export interface RootState {
 	token: TokenState;
 	user: UserState;
-	search: SearchState;
-}
-
-export interface SearchState{
-	searchName: string;
-	sortBy: string;
-	sortOrder: string;
-	page: number;
-	limit: number;
 }
 
 export type AuthActionTypes =
 	| SignInAction
 	| LogoutAction
 	| TokenOnAction
-	| TokenOffAction
-	| searchAction
+	| TokenOffAction;
