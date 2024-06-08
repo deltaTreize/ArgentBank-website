@@ -12,7 +12,6 @@ export function Header() {
 	const userId = useSelector((state: RootState) => state.user.id);
 	const dispatch = useDispatch();
 
-
 	const handleLogout = () => {
 		localStorage.id = "";
 		dispatch<any>(TokenOff());
@@ -28,25 +27,12 @@ export function Header() {
 					alt="Argent Bank Logo"
 				/>
 			</NavLink>
-				<nav className="navLinks">
-					<NavLink
-						className="comptes navLink"
-						id="comptesLink"
-						to={`/user/home`}
-					>
-						Comptes
-					</NavLink>
-				</nav>
-			<div className="connectionLinks">
+			<nav className="connectionLinks">
 				{logged && (
-					<NavLink
-						className="main-nav-item"
-						id="userLink"
-						to={`/edit/${userId}`}
-					>
-						<i className="fa fa-user-circle"></i>
+					<div className="userName">
 						{userName}
-					</NavLink>
+						<i className="fa fa-user-circle"></i>
+					</div>
 				)}
 				{!logged && (
 					<NavLink className="main-nav-item" id="signInLink" to={"/sign-In"}>
@@ -61,11 +47,10 @@ export function Header() {
 						to={"/"}
 						onClick={handleLogout}
 					>
-						<i className="fa fa-sign-out"></i>
-						Se deconnecter
+						<i className="fa fa-power-off"></i>
 					</NavLink>
 				)}
-			</div>
+			</nav>
 		</div>
 	);
 }

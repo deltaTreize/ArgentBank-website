@@ -1,51 +1,87 @@
 .operation-account {
-  position: relative;
+	background: #5db574;
 	width: 100%;
+}
+
+.entete-operation-account {
 	display: flex;
 	align-items: center;
-	border-bottom: 2px solid black;
-  &-date{
-    position: absolute;
-    left: 40px;
+	flex-direction: row;
+  gap: 18%;
+	color: #fff;
+	font-weight: 700;
+  font-size: 20px;
+	padding: 0 5% 10px 5%;
+	box-sizing: border-box;
+  p{
+    width: 15%;
+    text-align: start;
   }
-	&-infos {
-    position: relative;
-    left: 25%;
-		margin: 0;
-		&-title {
-			height: 40px;
-			margin: 0;
-			display: flex;
-			align-items: center;
-      font-weight: 700;
-      font-size: 18px;
-		}
-		&-description, &-category{
-			height: 30px;
-			margin: 0;
-			align-items: center;
-      justify-content: flex-end;
-		}
-    .fa-pencil, .fa-check{
-      margin-left: 10px;
-      cursor: pointer;
+	.fa-chevron-down,
+	.fa-chevron-up {
+		width: 50px;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	}
+	input {
+		margin-left: 5px;
+    ::placeholder{
+      color: #fff;
     }
 	}
-  &-montant{
-    position: absolute;
-    right: 15%;
-  }
-  .fa-chevron-down, .fa-chevron-up{
-    position: absolute;
-    right: 40px;
-    width: 50px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-  input{
-    margin-left: 5px;
-  }
+}
+.operation-account-infos {
+	padding: 0 5% 10px 5%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	color: #fff;
+	&-title {
+		height: 40px;
+		margin: 0;
+		display: flex;
+		align-items: center;
+		font-weight: 700;
+		font-size: 18px;
+	}
+	&-description,
+	&-category {
+		display: flex;
+		gap: 20.5%;
+		height: 30px;
+		margin: 0;
+		align-items: center;
+    padding: 0 11% 10px 0%;
+    p{
+      font-size: 20px;
+      font-weight: 700;
+      width: 15%;
+    }
+
+    input { 
+      width: 45%;
+      font-size: 18px;
+    }
+    ::-webkit-input-placeholder{
+      color: #fff;
+    }
+    .invisible{
+      background: none;
+      border: none;
+    }
+	}
+}
+
+.modification {
+  display: flex;
+  justify-content: start;
+	.fa-pencil,
+	.fa-check {
+		margin-left: 10px;
+		cursor: pointer;
+	}
 }

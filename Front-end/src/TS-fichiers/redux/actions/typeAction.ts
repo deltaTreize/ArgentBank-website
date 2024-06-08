@@ -26,7 +26,7 @@ export interface UserState {
 	lastName: string;
 	userName: string;
 	email: string;
-	account: Account[];
+	accounts: Account[];
 }
 
 export interface operations{

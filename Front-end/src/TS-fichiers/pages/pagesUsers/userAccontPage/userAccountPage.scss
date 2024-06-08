@@ -1,57 +1,104 @@
 .account-userAccountPage {
-	background: #fff;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	width: 60%;
-	position: absolute;
-	left: 35%;
-	top: 50%;
-	transform: translate(-50%, -50%);
 	border-radius: 10px;
-	.entete-account {
+	padding-top: 50px;
+	margin: auto;
+	@media (max-width: 1440px) {
+		width: 80%;
+	}
+	.title-culomn{
+		box-sizing: border-box;
 		width: 100%;
 		display: flex;
+		justify-content: start;
+		padding: 0 9% 10px 5%;
+		gap: 18%;
+		margin-top: 80px;
+		p{
+			width: 15%;
+			text-align: start;
+			margin: 0;
+			font-size: 18px;
+			font-weight: 500;
+		}
+	}
+
+	.entete-account {
+		width: 100%;
+		height: 140px;
+		display: flex;
 		flex-direction: row;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
-		border-bottom: 2px solid black;
-		font-weight: 700;
-    font-size: 18px;
+		background: #5f5d5d;
+		color: #fff;
+		border-radius: 10px;
+		padding: 0 5%;
+		box-sizing: border-box;
+
+		.text {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			gap: 5px;
+			width: 60%;
+			height: 100%;
+			font-weight: 500;
+			font-size: 20px;
+			p {
+				margin: 0;
+			}
+			.entete-account-solde {
+				font-weight: 700;
+				font-size: 24px;
+			}
+		}
+		a {
+			background: none;
+			border: none;
+			color: #fff;
+			font-size: 55px;
+			cursor: pointer;
+		}
 	}
 	.AllOperation-account {
+		background: #fff;
 		width: 100%;
-		height: 60vh;
-		overflow-y: scroll;
-		scrollbar-width: none;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
 	}
 }
 
 .dashboard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0px;
-  border: 1px solid black;
-  position: absolute;
-  height: 600px;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  padding: 0 !important;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 0px;
+	border: 1px solid black;
+	position: absolute;
+	height: 600px;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	padding: 0 !important;
 	.card {
-    margin-top: 10px;
-    position: relative;
+		margin-top: 10px;
+		position: relative;
 		width: 80%;
 		aspect-ratio: 16/9;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 		border-radius: 10px;
 		background-image: url("../../../../../public/assets/fondCard.jpg");
 		cursor: pointer;
 		&-active {
-      display: none;
+			display: none;
 		}
 		.card-logo-argentBank {
 			width: 45%;
@@ -63,8 +110,7 @@
 			top: 5%;
 			left: 50%;
 			transform: translateX(-50%);
-      pointer-events: none;
-
+			pointer-events: none;
 		}
 		.card-logo-mastercard {
 			background-image: url("../../../../../public/assets/mastercard.png");
@@ -76,8 +122,7 @@
 			position: absolute;
 			bottom: 8%;
 			right: 5%;
-      pointer-events: none;
-
+			pointer-events: none;
 		}
 		.puce {
 			width: 15%;
@@ -89,8 +134,7 @@
 			background-image: url("../../../../../public/assets/puce.png");
 			background-repeat: no-repeat;
 			background-size: contain;
-      pointer-events: none;
-
+			pointer-events: none;
 		}
 		.sansContact {
 			width: 15%;
@@ -102,8 +146,7 @@
 			background-image: url("../../../../../public/assets/sansContact.png");
 			background-repeat: no-repeat;
 			background-size: contain;
-      pointer-events: none;
-
+			pointer-events: none;
 		}
 		.info {
 			width: 60%;
@@ -118,66 +161,66 @@
 			p {
 				margin: 0;
 				color: #fff;
-        pointer-events: none;
+				pointer-events: none;
 			}
 			.card-number {
 				font-weight: 700;
-        pointer-events: none;
+				pointer-events: none;
 			}
 		}
 	}
-  .card-back{ 
-    margin-top: 10px;
-    position: relative;
+	.card-back {
+		margin-top: 10px;
+		position: relative;
 		width: 80%;
 		aspect-ratio: 16/9;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 		border-radius: 10px;
 		background: #dfdfdf;
-    display: flex;
+		display: flex;
 		cursor: pointer;
 		&-active {
-      display: none;
+			display: none;
 		}
-    .bandeMagnetique{
-      width: 100%;
-      height: 25px;
-      background: #000;
-      position: absolute;
-      top: 20px;
-    }
-    .info-backCard{
-      width: 100%;
-      height: 80%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      position: absolute;
-      bottom: 0;
-      color: #000;
-      gap: 15px;
-      padding-left: 20px;
-      p{
-        margin: 0;
-        font-weight: 600;
-      }
-    }
-  }
-  .chart-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    .chart-title{
-      margin-bottom: 0;
-    }
-    .chart {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
-      height: 400px;
-      margin-top: 10px;
-    }
-  }
+		.bandeMagnetique {
+			width: 100%;
+			height: 25px;
+			background: #000;
+			position: absolute;
+			top: 20px;
+		}
+		.info-backCard {
+			width: 100%;
+			height: 80%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			position: absolute;
+			bottom: 0;
+			color: #000;
+			gap: 15px;
+			padding-left: 20px;
+			p {
+				margin: 0;
+				font-weight: 600;
+			}
+		}
+	}
+	.chart-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-end;
+		.chart-title {
+			margin-bottom: 0;
+		}
+		.chart {
+			position: absolute;
+			bottom: 10px;
+			width: 100%;
+			height: 400px;
+			margin-top: 10px;
+		}
+	}
 }

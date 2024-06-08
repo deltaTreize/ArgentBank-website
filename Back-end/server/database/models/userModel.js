@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema(
 		firstName: String,
 		lastName: String,
 		userName: String,
-		account: [Account.schema],
+		accounts: [Account.schema],
 	},
 	{
 		timestamps: true,

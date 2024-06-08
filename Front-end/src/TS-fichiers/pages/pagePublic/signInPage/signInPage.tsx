@@ -55,7 +55,7 @@ export function SignIn() {
 				lastName: userDataJson.body.lastName,
 				userName: userDataJson.body.userName,
 				email: userDataJson.body.email,
-				account: userDataJson.body.account,
+				accounts: userDataJson.body.accounts,
 			};
 			dispatch(Login(userData));
 		}

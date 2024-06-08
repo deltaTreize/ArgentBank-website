@@ -15,21 +15,21 @@ const users = [
 				solde: 1000,
 				operations: [
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 1",
 						montant: 100,
 						description: "description 1",
 						category: "category 1",
 					},
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 2",
 						montant: 100,
 						description: "description 2",
 						category: "category 1",
 					},
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 3",
 						montant: 100,
 						description: "description 3",
@@ -43,21 +43,21 @@ const users = [
 				solde: 1000,
 				operations: [
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 1",
 						montant: 100,
 						description: "description 1",
 						category: "category 1",
 					},
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 2",
 						montant: 100,
 						description: "description 2",
 						category: "category 1",
 					},
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 3",
 						montant: 100,
 						description: "description 3",
@@ -71,21 +71,21 @@ const users = [
 				solde: 1000,
 				operations: [
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 1",
 						montant: 100,
 						description: "description 1",
 						category: "category 1",
 					},
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 2",
 						montant: 100,
 						description: "description 2",
 						category: "category 1",
 					},
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 3",
 						montant: 100,
 						description: "description 3",
@@ -108,21 +108,21 @@ const users = [
 				solde: 1000,
 				operations: [
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 1",
 						montant: 100,
 						description: "description 1",
 						category: "category 1",
 					},
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 2",
 						montant: 100,
 						description: "description 2",
 						category: "category 1",
 					},
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 3",
 						montant: 100,
 						description: "description 3",
@@ -136,21 +136,21 @@ const users = [
 				solde: 1000,
 				operations: [
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 1",
 						montant: 100,
 						description: "description 1",
 						category: "category 1",
 					},
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 2",
 						montant: 100,
 						description: "description 2",
 						category: "category 1",
 					},
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 3",
 						montant: 100,
 						description: "description 3",
@@ -164,21 +164,21 @@ const users = [
 				solde: 1000,
 				operations: [
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 1",
 						montant: 100,
 						description: "description 1",
 						category: "category 1",
 					},
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 2",
 						montant: 100,
 						description: "description 2",
 						category: "category 1",
 					},
 					{
-						date: "2022-01-01",
+						date: "22/01/01",
 						title: "operation 3",
 						montant: 100,
 						description: "description 3",

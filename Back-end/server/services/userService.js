@@ -18,7 +18,7 @@ module.exports.createUser = async serviceData => {
       firstName: serviceData.firstName,
       lastName: serviceData.lastName,
       userName: serviceData.userName,
-			account: serviceData.account,
+			accounts: serviceData.accounts,
     })
   console.log(newUser)
     let result = await newUser.save()

@@ -9,7 +9,7 @@ let initialState: UserState = {
 	lastName: "",
 	userName: "",
 	email: "",
-	account: [],
+	accounts: [],
 };
 
 const userReducer = (	state = initialState,	action: AuthActionTypes ): UserState => {
@@ -22,7 +22,7 @@ const userReducer = (	state = initialState,	action: AuthActionTypes ): UserState
 				lastName: action.payload.lastName,
 				userName: action.payload.userName,
 				email: action.payload.email,
-				account: action.payload.account,
+				accounts: action.payload.accounts,
 			};
 
 		case "LOGOUT":

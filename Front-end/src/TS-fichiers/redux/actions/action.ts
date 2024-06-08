@@ -15,7 +15,7 @@ export function Login(data: UserState): SignInAction {
 			lastName: data.lastName,
 			userName: data.userName,
 			email: data.email,
-			account: data.account,
+			accounts: data.accounts,
 		},
 	};
 }
