@@ -54,7 +54,7 @@ paths:
         "200":
           description: Signup Successfully
           schema:
-            $ref: "#/definitions/UserApiResponse"
+            $ref: "#/definitions/apiResponse"
         "400":
           description: Invalid Fields
         "500":
@@ -105,66 +105,12 @@ paths:
         "500":
           description: Internal Server Error
 
-  /user/account:
-    put:
-      security:
-        - Bearer: []
-      tags:
-        - Admin Module
-      summary: User Profile API
-      description: API for add account at a user profile
-      parameters:
-        - in: body
-          name: body
-          description: account payload
-          required: true
-          schema:
-            $ref: "#/definitions/UserAccount"
-      produces:
-        - application/json
-      responses:
-        "200":
-          description: add account at a user profile successully
-          schema:
-            $ref: "#/definitions/accountResponse"
-        "400":
-          description: Invalid Fields
-        "500":
-          description: Internal Server Error
-
-  /user/account/operations:
-    put:
-      security:
-        - Bearer: []
-      tags:
-        - Admin Module
-      summary: User Profile API
-      description: API for add operation in account at a user profile
-      parameters:
-        - in: body
-          name: body
-          description: add operation in account at a user profile
-          required: true
-          schema:
-            $ref: "#/definitions/operation"
-      produces:
-        - application/json
-      responses:
-        "200":
-          description: add operations at a user profile successully
-          schema:
-            $ref: "#/definitions/operationResponse"
-        "400":
-          description: Invalid Fields
-        "500":
-          description: Internal Server Error
-
   /user/account/operations/description:
     put:
       security:
         - Bearer: []
       tags:
-        - Admin Module
+        - User Module
       summary: User Profile API
       description: API for add or update descrition of operations
       parameters:
@@ -180,7 +126,7 @@ paths:
         "200":
           description: add or update descrition successully
           schema:
-            $ref: "#/definitions/descriptionResponse"
+            $ref: "#/definitions/userResponse"
         "400":
           description: Invalid Fields
         "500":
@@ -191,7 +137,7 @@ paths:
       security:
         - Bearer: []
       tags:
-        - Admin Module
+        - User Module
       summary: User Profile API
       description: API for add or update category of operations
       parameters:
@@ -207,200 +153,7 @@ paths:
         "200":
           description: add or update category successully
           schema:
-            $ref: "#/definitions/categoryResponse"
-        "400":
-          description: Invalid Fields
-        "500":
-          description: Internal Server Error
-
-  /user/account/close:
-    put:
-      security:
-        - Bearer: []
-      tags:
-        - Admin Module
-      summary: User Profile API
-      description: API for close account at a user profile
-      parameters:
-        - in: body
-          name: body
-          description: close account at a user profile
-          required: true
-          schema:
-            $ref: "#/definitions/visible"
-      produces:
-        - application/json
-      responses:
-        "200":
-          description: close account at a user profile successully
-          schema:
-            $ref: "#/definitions/visible"
-        "400":
-          description: Invalid Fields
-        "500":
-          description: Internal Server Error
-
-  /user:
-   get:
-      security:
-        - Bearer: []
-      tags:
-        - Admin Module
-      summary: Retrieve all confirmed user profiles
-      description: API to get all confirmed user profiles
-      parameters:
-        - in: header
-          name: id
-          description: ID of the admin
-          required: true
-          schema:
-            type: string
-      produces:
-        - application/json
-      responses:
-        "200":
-          description: Successfully retrieved user profiles
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/User"
-        "401":
-          description: Unauthorized, admin not found
-        "404":
-          description: No users found
-        "500":
-          description: Internal Server Error
-
-  /user/admin:
-    put:
-      security:
-        - Bearer: []
-      tags:
-        - Admin Module
-      summary: User Profile API
-      description: API for pagination of user profiles
-      parameters:
-        - in: body
-          name: body
-          description: pagination of user profiles
-          required: true
-          schema:
-            $ref: "#/definitions/pagination"
-      produces:
-        - application/json
-      responses:
-        "200":
-          description: pagination successully
-          schema:
-            $ref: "#/definitions/paginationResponse"
-        "400":
-          description: Invalid Fields
-        "500":
-          description: Internal Server Error
-
-  /user/budget:
-    put:
-      security:
-        - Bearer: []
-      tags:
-        - User Module
-      summary: User Profile API
-      description: API for add or update budget
-      parameters:
-        - in: body
-          name: body
-          description: add or update budget
-          required: true
-          schema:
-            $ref: "#/definitions/budget"
-      produces:
-        - application/json
-      responses:
-        "200":
-          description: add or update budget successully
-          schema:
-            $ref: "#/definitions/budgetResponse"
-        "400":
-          description: Invalid Fields
-        "500":
-          description: Internal Server Error
-
-  /user/beneficiaires:
-    put:
-      security:
-        - Bearer: []
-      tags:
-        - User Module
-      summary: User Profile API
-      description: API for add beneficiaires
-      parameters:
-        - in: body
-          name: body
-          description: add beneficiaires
-          required: true
-          schema:
-            $ref: "#/definitions/beneficiaires"
-      produces:
-        - application/json
-      responses:
-        "200":
-          description: add beneficiaires successully
-          schema:
-            $ref: "#/definitions/beneficiairesResponse"
-        "400":
-          description: Invalid Fields
-        "500":
-          description: Internal Server Error
-
-  /user/beneficiaires:
-    delete:
-      security:
-        - Bearer: []
-      tags:
-        - User Module
-      summary: User Profile API
-      description: API for delete beneficiaire
-      parameters:
-        - in: body
-          name: body
-          description: delete beneficiaire
-          required: true
-          schema:
-            $ref: "#/definitions/deleteBeneficiaires"
-      produces:
-        - application/json
-      responses:
-        "200":
-          description: delete beneficiaire successully
-          schema:
-            $ref: "#/definitions/deleteBeneficiairesResponse"
-        "400":
-          description: Invalid Fields
-        "500":
-          description: Internal Server Error
-
-  /user/beneficiaires/modifier:
-    put:
-      security:
-        - Bearer: []
-      tags:
-        - User Module
-      summary: User Profile API
-      description: API for update beneficiaire
-      parameters:
-        - in: body
-          name: body
-          description: update beneficiaire
-          required: true
-          schema:
-            $ref: "#/definitions/updateBeneficiaires"
-      produces:
-        - application/json
-      responses:
-        "200":
-          description: update beneficiaire successully
-          schema:
-            $ref: "#/definitions/updateBeneficiairesResponse"
+            $ref: "#/definitions/userResponse"
         "400":
           description: Invalid Fields
         "500":
@@ -430,6 +183,39 @@ definitions:
       userName:
         type: string
         description: user public name
+      accounts:
+        type: array
+        items:
+          type: object
+          properties:
+            _id:
+              type: string
+            name:
+              type: string
+            nbAccount:
+              type: string
+            solde:
+              type: number
+            operations:
+              type: array
+              items:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                  date:
+                    type: string
+                    format: date
+                  title:
+                    type: string
+                  montant:
+                    type: number
+                  description:
+                    type: string
+                  category:
+                    type: string
+
+
   Login:
     properties:
       email:
@@ -438,95 +224,31 @@ definitions:
       password:
         type: string
         description: user password
-  LoginResponse:
-    type: object
-    properties:
-      token:
-        type: string
+
   UserProfile:
     type: object
     properties:
       userName:
         type: string
-  UserAccount:
-    type: object
-    properties:
-      name:
-        type: string
-      nbAccount:
-        type: string
-      solde:
-        type: number
-      visible:
-        type: boolean
-      operations:
-        type: array
-        items:
-          type: object
-  operation:
-    type: object
-    properties:
-      date:
-        type: string
-      title:
-        type: string
-      description:
-        type: string
-      montant:
-        type: number
+
   description:
     type: object
     properties:
       description:
         type: string
+
   category:
     type: object
     properties:
       category:
         type: string
-  visible:
-    type: object
-    properties:
-      visible:
-        type: boolean
-  pagination:
-    type: object
-    properties:
-      page:
-        type: number
-      limit:
-        type: number
-  budget:
-    type: object
-    properties:
-      budgetCategory:
-        type: string
-      value:
-        type: number
-  beneficiaires:
-    type: object
-    properties:
-      name:
-        type: string
-      rib:
-        type: string
-  deleteBeneficiaires:
-    type: object
-    properties:
-      id:
-        type: string
-      iban:
-        type: string
-  updateBeneficiaires:
-    type: object
-    properties:
-      id:
-        type: string
-      name:
-        type: string
-      rib:
-        type: string
 
+
+  LoginResponse:
+    type: object
+    properties:
+      token:
+        type: string
 
   UserResponse:
     type: object
@@ -540,33 +262,53 @@ definitions:
         properties:
           id:
             type: string
+          firstName:
+            type: string
+          lastName:
+            type: string
+          userName:
+            type: string
           email:
             type: string
-  accountResponse:
-    type: object
-    properties:
-      status:
-        type: integer
-      message:
-        type: string
-      body:
-        type: object
-        properties:
-          id:
+          createdAt:
             type: string
-          name:
+            format: date-time
+          updatedAt:
             type: string
-          nbAccount:
-            type: string
-          solde:
-            type: number
-          visible:
-            type: boolean
-          operations:
+            format: date-time
+          accounts:
             type: array
             items:
               type: object
-  operationResponse:
+              properties:
+                _id:
+                  type: string
+                name:
+                  type: string
+                nbAccount:
+                  type: string
+                solde:
+                  type: number
+                operations:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      date:
+                        type: string
+                        format: date
+                      title:
+                        type: string
+                      montant:
+                        type: number
+                      description:
+                        type: string
+                      category:
+                        type: string
+
+  ApiResponse:
     type: object
     properties:
       status:
@@ -578,106 +320,5 @@ definitions:
         properties:
           id:
             type: string
-          date:
+          email:
             type: string
-          title:
-            type: string
-          description:
-            type: string
-          montant:
-            type: number
-  descriptionResponse:
-    type: object
-    properties:
-      status:
-        type: integer
-      message:
-        type: string
-      body:
-        type: object
-        properties:
-          description:
-            type: string
-  categoryResponse:
-    type: object
-    properties:
-      status:
-        type: integer
-      message:
-        type: string
-      body:
-        type: object
-        properties:
-          category:
-            type: string
-  paginationResponse:
-    type: object
-    properties:
-      status:
-        type: integer
-      message:
-        type: string
-      body:
-        type: object
-        properties:
-          page:
-            type: number
-          limit:
-            type: number
-  budgetResponse:
-    type: object
-    properties:
-      status:
-        type: integer
-      message:
-        type: string
-      body:
-        type: object
-        properties:
-          budgetCategory:
-            type: string
-          value:
-            type: number
-  beneficiairesResponse:
-    type: object
-    properties:
-      status:
-        type: integer
-      message:
-        type: string
-      body:
-        type: object
-        properties:
-          name:
-            type: string
-          rib:
-            type: string
-  deleteBeneficiairesResponse:
-    type: object
-    properties:
-      status:
-        type: integer
-      message:
-        type: string
-      body:
-        type: object
-        properties:
-          name:
-            type: string
-          iban:
-            type: string
-  updateBeneficiairesResponse:
-    type: object
-    properties:
-      status:
-        type: integer
-      message:
-        type: string
-      body:
-        type: object
-        properties:
-          name:
-            type: string
-          rib:
-            type: string
-

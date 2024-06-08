@@ -8,7 +8,7 @@ const users = [
 		email: "tony@stark.com",
 		password: "password123",
 		userName: "Iron-Man",
-		account: [
+		accounts: [
 			{
 				name: "compte courant",
 				nbAccount: "123456789",
@@ -101,7 +101,7 @@ const users = [
 		email: "steve@rogers.com",
 		password: "password456",
 		userName: "Captain",
-		account: [
+		accounts: [
 			{
 				name: "compte courant",
 				nbAccount: "123456789",

@@ -32,7 +32,6 @@ export function SignIn() {
 			}
 		);
 		const loginDataJson = await loginData.json();
-		console.log(loginDataJson);
 		
 
 		if (loginDataJson.status === 200) {
