@@ -114,7 +114,7 @@ module.exports.updateDescription = async (serviceData) => {
 			throw new Error("User not found");
 		}
 
-		const accountIndex = user.account.findIndex(
+		const accountIndex = user.accounts.findIndex(
 			(data) => data.id === accountId
 		);
 
@@ -122,7 +122,7 @@ module.exports.updateDescription = async (serviceData) => {
 			throw new Error("Account not found");
 		}
 
-		const operationIndex = user.account[accountIndex].operations.findIndex(
+		const operationIndex = user.accounts[accountIndex].operations.findIndex(
 			(data) => data.id === operationId
 		);
 
@@ -130,7 +130,7 @@ module.exports.updateDescription = async (serviceData) => {
 			throw new Error("Operation not found");
 		}
 
-		user.account[accountIndex].operations[operationIndex].description =
+		user.accounts[accountIndex].operations[operationIndex].description =
 			serviceData.body.description;
 
 		await user.save();
@@ -157,7 +157,7 @@ module.exports.updateCategory = async (serviceData) => {
 			throw new Error("User not found");
 		}
 
-		const accountIndex = user.account.findIndex(
+		const accountIndex = user.accounts.findIndex(
 			(data) => data.id === accountId
 		);
 
@@ -165,7 +165,7 @@ module.exports.updateCategory = async (serviceData) => {
 			throw new Error("Account not found");
 		}
 
-		const operationIndex = user.account[accountIndex].operations.findIndex(
+		const operationIndex = user.accounts[accountIndex].operations.findIndex(
 			(data) => data.id === operationId
 		);
 
@@ -173,7 +173,7 @@ module.exports.updateCategory = async (serviceData) => {
 			throw new Error("Operation not found");
 		}
 
-		user.account[accountIndex].operations[operationIndex].category =
+		user.accounts[accountIndex].operations[operationIndex].category =
 			serviceData.body.category;
 
 		await user.save();

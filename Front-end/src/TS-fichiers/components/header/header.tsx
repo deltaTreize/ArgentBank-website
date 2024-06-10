@@ -9,11 +9,9 @@ export function Header() {
 	const token = useSelector((state: RootState) => state.token.token);
 	const userName = useSelector((state: RootState) => state.user.userName);
 	const logged = token !== "" ? true : false;
-	const userId = useSelector((state: RootState) => state.user.id);
 	const dispatch = useDispatch();
 
 	const handleLogout = () => {
-		localStorage.id = "";
 		dispatch<any>(TokenOff());
 		dispatch<any>(Logout());
 	};

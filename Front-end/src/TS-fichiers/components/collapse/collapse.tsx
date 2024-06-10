@@ -36,9 +36,7 @@ export function Collapse({
 		useState<boolean>(true);
 	const token = useSelector((state: RootState) => state.token.token);
 	const userId = useSelector((state: RootState) => state.user.id);
-	const [userData, setUserData] = useState<UserState>();
 	const dispatch: Dispatch<AuthActionTypes> = useDispatch();
-
 
 	async function updateDescription() {
 		setIsDisabled(!isDisabled);
@@ -60,6 +58,9 @@ export function Collapse({
 		})
 
 		const userDataJson = await userDataFetched.json();
+
+		console.log(userDataJson);
+		
 
 		const userData: UserState = {
 			id: userDataJson.body.id,
@@ -143,7 +144,7 @@ export function Collapse({
 							value={descriptionValue}
 							disabled={isDisabled}
 							onChange={(e) => setDescriptionValue(e.target.value)}
-							className={isDisabled === true ? "invisible" : ""}/>
+							className={pencilDescriptionDisplay === true ? "invisible" : ""}/>
 						<i
 							className="fa-solid fa-pencil"
 							style={{
@@ -179,7 +180,7 @@ export function Collapse({
 							value={categoryValue}
 							disabled={isDisabled}
 							onChange={(e) => setCategoryValue(e.target.value)}
-							className={isDisabled === true ? "invisible" : ""}/>
+							className={pencilCategoryDisplay === true ? "invisible" : ""}/>
 						<i
 							className="fa-solid fa-pencil"
 							style={{

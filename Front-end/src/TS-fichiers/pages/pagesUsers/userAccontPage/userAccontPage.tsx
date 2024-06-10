@@ -39,7 +39,7 @@ export function UserAccontPage() {
 				<section className="title-culomn">
 					<p>Date</p>
 					<p>Description</p>
-					<p>Montant</p>
+					<p className="title-culomn-montant">Montant</p>
 				</section>
 				<section className="AllOperation-account">
 					{operations?.map((data) => (

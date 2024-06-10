@@ -7,16 +7,30 @@
 	display: flex;
 	align-items: center;
 	flex-direction: row;
-  gap: 18%;
+	gap: 18%;
 	color: #fff;
 	font-weight: 700;
-  font-size: 20px;
+	font-size: 20px;
 	padding: 0 5% 10px 5%;
 	box-sizing: border-box;
-  p{
-    width: 15%;
-    text-align: start;
-  }
+	@media (max-width: 800px) {
+		gap: 0;
+	}
+
+	p {
+		@media (max-width: 1024px) {
+			width: 80%;
+			font-size: 15px;
+		}
+		@media (max-width: 800px) {
+			font-size: 12px;
+		}
+		@media (max-width: 425px) {
+			font-weight: normal;
+		}
+		width: 15%;
+		text-align: start;
+	}
 	.fa-chevron-down,
 	.fa-chevron-up {
 		width: 50px;
@@ -28,9 +42,9 @@
 	}
 	input {
 		margin-left: 5px;
-    ::placeholder{
-      color: #fff;
-    }
+		::placeholder {
+			color: #fff;
+		}
 	}
 }
 .operation-account-infos {
@@ -55,33 +69,53 @@
 		height: 30px;
 		margin: 0;
 		align-items: center;
-    padding: 0 11% 10px 0%;
-    p{
-      font-size: 20px;
-      font-weight: 700;
-      width: 15%;
-    }
+		padding: 0 11% 10px 0%;
+		p {
+			font-size: 20px;
+			font-weight: 700;
+			width: 15%;
+			@media (max-width: 800px) {
+				font-size: 14px;
+			}
+			@media (max-width: 425px) {
+				font-size: 10px;
+			}
+		}
 
-    input { 
-      width: 45%;
-      font-size: 18px;
-    }
-    ::-webkit-input-placeholder{
-      color: #fff;
-    }
-    .invisible{
-      background: none;
-      border: none;
-    }
+		input {
+			width: 45%;
+			font-size: 18px;
+			@media (max-width: 800px) {
+				font-size: 14px;
+			}
+			@media (max-width: 425px) {
+				font-size: 10px;
+			}
+		}
+		::-webkit-input-placeholder {
+			color: #fff;
+		}
+		.invisible {
+			background: none;
+			border: none;
+			color: #fff;
+		}
 	}
 }
 
 .modification {
-  display: flex;
-  justify-content: start;
+	display: flex;
+	justify-content: start;
 	.fa-pencil,
 	.fa-check {
 		margin-left: 10px;
 		cursor: pointer;
+		@media (max-width: 800px) {
+			font-size: 14px;
+			margin: 5px;
+		}
+		@media (max-width: 425px) {
+			font-size: 10px;
+		}
 	}
 }
