@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "redux";
 import { Button } from "../../../components/button/button";
-import { AuthActionTypes, RootState, UserState } from "../../../redux/actions/typeAction";
-import "./userPage.scss";
 import Spinner from "../../../components/spinner/spinner";
 import { Login } from "../../../redux/actions/action";
+import { AuthActionTypes, RootState, UserState } from "../../../redux/actions/typeAction";
+import "./userPage.scss";
 
 
 export function User() {
