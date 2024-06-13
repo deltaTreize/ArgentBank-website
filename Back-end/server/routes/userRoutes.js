@@ -17,15 +17,15 @@ router.put(
 	tokenValidation.validateToken,
 	userController.updateUserProfile
 );
-router.put(
-	"/account/operations/description",
-	tokenValidation.validateToken,
-	userController.updateDescription
-);
-router.put(
-	"/account/operations/category",
-	tokenValidation.validateToken,
-	userController.updateCategory
-);
+// router.put(
+// 	"/account/operations/description",
+// 	tokenValidation.validateToken,
+// 	userController.updateDescription
+// );
+// router.put(
+// 	"/account/operations/category",
+// 	tokenValidation.validateToken,
+// 	userController.updateCategory
+// );
 
 module.exports = router;

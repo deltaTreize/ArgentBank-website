@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { AuthActionTypes, RootState, UserState } from "../../redux/actions/typeAction";
 import "./collapse.scss";
-import { useDispatch } from "react-redux";
-import { Dispatch } from "redux";
-import { Login } from "../../redux/actions/action";
+// import { useSelector } from "react-redux";
+// import { AuthActionTypes, RootState, UserState } from "../../redux/actions/typeAction";
+// import { useDispatch } from "react-redux";
+// import { Dispatch } from "redux";
+// import { Login } from "../../redux/actions/action";
 
 interface CollapseProps {
 	title: string;
 	date: string;
 	description: string;
 	montant: number;
-	operationId: number;
-	idAccount: number;
+	// operationId: number;
+	// idAccount: number;
 	category: string;
 }
 
@@ -21,88 +21,85 @@ export function Collapse({
 	date,
 	description,
 	montant,
-	operationId,
-	idAccount,
+	// operationId,
+	// idAccount,
 	category,
 }: CollapseProps) {
 	const [descripDisplay, setDescripDisplay] = useState<boolean>(false);
 	const [categoryDisplay, setCategoryDisplay] = useState<boolean>(false);
-	const [isDisabled, setIsDisabled] = useState<boolean>(true);
-	const [descriptionValue, setDescriptionValue] = useState<string>("");
-	const [categoryValue, setCategoryValue] = useState<string>("");
-	const [pencilDescriptionDisplay, setPencilDescriptionDisplay] =
-		useState<boolean>(true);
-	const [pencilCategoryDisplay, setPencilCategoryDisplay] =
-		useState<boolean>(true);
-	const token = useSelector((state: RootState) => state.token.token);
-	const userId = useSelector((state: RootState) => state.user.id);
-	const dispatch: Dispatch<AuthActionTypes> = useDispatch();
+	const [isDisabled] = useState<boolean>(true);
+	const [pencilCategoryDisplay] = useState<boolean>(true);
+	const [pencilDescriptionDisplay] = useState<boolean>(true);
+	// const [descriptionValue, setDescriptionValue] = useState<string>("");
+	// const [categoryValue, setCategoryValue] = useState<string>("");
+	// const token = useSelector((state: RootState) => state.token.token);
+	// const userId = useSelector((state: RootState) => state.user.id);
+	// const dispatch: Dispatch<AuthActionTypes> = useDispatch();
 
-	async function updateDescription() {
-		setIsDisabled(!isDisabled);
-		let headersList = {
-			id: `${userId}`,
-			idaccount: `${idAccount}`,
-			operationid: `${operationId}`,
-			Authorization: "Bearer " + token,
-			"Content-Type": "application/json",
-		};
+	// async function updateDescription() {
+	// 	setIsDisabled(!isDisabled);
+	// 	let headersList = {
+	// 		id: `${userId}`,
+	// 		idaccount: `${idAccount}`,
+	// 		operationid: `${operationId}`,
+	// 		Authorization: "Bearer " + token,
+	// 		"Content-Type": "application/json",
+	// 	};
 
-		let bodyContent = JSON.stringify({
-			description: descriptionValue,
-		});
-		const userDataFetched = await fetch("http://localhost:3001/api/v1/user/account/operations/description", {
-			method: "PUT",
-			body: bodyContent,
-			headers: headersList,
-		})
+	// 	let bodyContent = JSON.stringify({
+	// 		description: descriptionValue,
+	// 	});
+	// 	const userDataFetched = await fetch("http://localhost:3001/api/v1/user/account/operations/description", {
+	// 		method: "PUT",
+	// 		body: bodyContent,
+	// 		headers: headersList,
+	// 	})
 
-		const userDataJson = await userDataFetched.json();
+	// 	const userDataJson = await userDataFetched.json();
 
-		console.log(userDataJson);
-		
+	// 	console.log(userDataJson);
 
-		const userData: UserState = {
-			id: userDataJson.body.id,
-			firstName: userDataJson.body.firstName,
-			lastName: userDataJson.body.lastName,
-			userName: userDataJson.body.userName,
-			email: userDataJson.body.email,
-			accounts: userDataJson.body.accounts,
-		};
-		dispatch(Login(userData));
-	}
-	async function updateCategory() {
-		setIsDisabled(!isDisabled);
-		let headersList = {
-			id: `${userId}`,
-			idaccount: `${idAccount}`,
-			operationid: `${operationId}`,
-			Authorization: "Bearer " + token,
-			"Content-Type": "application/json",
-		};
+	// 	const userData: UserState = {
+	// 		id: userDataJson.body.id,
+	// 		firstName: userDataJson.body.firstName,
+	// 		lastName: userDataJson.body.lastName,
+	// 		userName: userDataJson.body.userName,
+	// 		email: userDataJson.body.email,
+	// 		accounts: userDataJson.body.accounts,
+	// 	};
+	// 	dispatch(Login(userData));
+	// }
+	// async function updateCategory() {
+	// 	setIsDisabled(!isDisabled);
+	// 	let headersList = {
+	// 		id: `${userId}`,
+	// 		idaccount: `${idAccount}`,
+	// 		operationid: `${operationId}`,
+	// 		Authorization: "Bearer " + token,
+	// 		"Content-Type": "application/json",
+	// 	};
 
-		let bodyContent = JSON.stringify({
-			category: categoryValue,
-		});
-		const userDataFetched = await fetch("http://localhost:3001/api/v1/user/account/operations/category", {
-			method: "PUT",
-			body: bodyContent,
-			headers: headersList,
-		})
+	// 	let bodyContent = JSON.stringify({
+	// 		category: categoryValue,
+	// 	});
+	// 	const userDataFetched = await fetch("http://localhost:3001/api/v1/user/account/operations/category", {
+	// 		method: "PUT",
+	// 		body: bodyContent,
+	// 		headers: headersList,
+	// 	})
 
-		const userDataJson = await userDataFetched.json();
+	// 	const userDataJson = await userDataFetched.json();
 
-		const userData: UserState = {
-			id: userDataJson.body.id,
-			firstName: userDataJson.body.firstName,
-			lastName: userDataJson.body.lastName,
-			userName: userDataJson.body.userName,
-			email: userDataJson.body.email,
-			accounts: userDataJson.body.accounts,
-		};
-		dispatch(Login(userData));
-	}
+	// 	const userData: UserState = {
+	// 		id: userDataJson.body.id,
+	// 		firstName: userDataJson.body.firstName,
+	// 		lastName: userDataJson.body.lastName,
+	// 		userName: userDataJson.body.userName,
+	// 		email: userDataJson.body.email,
+	// 		accounts: userDataJson.body.accounts,
+	// 	};
+	// 	dispatch(Login(userData));
+	// }
 
 	return (
 		<div className="operation-account">
@@ -141,21 +138,22 @@ export function Collapse({
 					<div className="modification">
 						<input
 							placeholder={description}
-							value={descriptionValue}
+							// value={descriptionValue}
 							disabled={isDisabled}
-							onChange={(e) => setDescriptionValue(e.target.value)}
-							className={pencilDescriptionDisplay === true ? "invisible" : ""}/>
+							// onChange={(e) => setDescriptionValue(e.target.value)}
+							className={pencilDescriptionDisplay === true ? "invisible" : ""}
+						/>
 						<i
 							className="fa-solid fa-pencil"
 							style={{
 								display: pencilDescriptionDisplay === true ? "flex" : "none",
 							}}
-							onClick={() => {
-								setPencilDescriptionDisplay(!pencilDescriptionDisplay);
-								setIsDisabled(!isDisabled);
-							}}
+							// onClick={() => {
+							// 	setPencilDescriptionDisplay(!pencilDescriptionDisplay);
+							// 	setIsDisabled(!isDisabled);
+							// }}
 						></i>
-						<i
+						{/* <i
 							className="fa-solid fa-check"
 							style={{
 								display: pencilDescriptionDisplay === true ? "none" : "flex",
@@ -164,7 +162,7 @@ export function Collapse({
 								updateDescription();
 								setPencilDescriptionDisplay(!pencilDescriptionDisplay);
 							}}
-						></i>
+						></i> */}
 					</div>
 				</div>
 				<div
@@ -177,21 +175,22 @@ export function Collapse({
 					<div className="modification">
 						<input
 							placeholder={category}
-							value={categoryValue}
+							// value={categoryValue}
 							disabled={isDisabled}
-							onChange={(e) => setCategoryValue(e.target.value)}
-							className={pencilCategoryDisplay === true ? "invisible" : ""}/>
+							// onChange={(e) => setCategoryValue(e.target.value)}
+							className={pencilCategoryDisplay === true ? "invisible" : ""}
+						/>
 						<i
 							className="fa-solid fa-pencil"
 							style={{
 								display: pencilCategoryDisplay === true ? "flex" : "none",
 							}}
-							onClick={() => {
-								setPencilCategoryDisplay(!pencilCategoryDisplay);
-								setIsDisabled(!isDisabled);
-							}}
+							// onClick={() => {
+							// 	setPencilCategoryDisplay(!pencilCategoryDisplay);
+							// 	setIsDisabled(!isDisabled);
+							// }}
 						></i>
-						<i
+						{/* <i
 							className="fa-solid fa-check"
 							style={{
 								display: pencilCategoryDisplay === true ? "none" : "flex",
@@ -200,7 +199,7 @@ export function Collapse({
 								updateCategory();
 								setPencilCategoryDisplay(!pencilCategoryDisplay);
 							}}
-						></i>
+						></i> */}
 					</div>
 				</div>
 			</div>

@@ -49,8 +49,8 @@ export function UserAccontPage() {
 							montant={data.montant}
 							description={data.description}
 							key={data._id}
-							operationId={data._id}
-							idAccount={targetAccount._id}
+							// operationId={data._id}
+							// idAccount={targetAccount._id}
 							category={data.category}
 						/>
 					))}
