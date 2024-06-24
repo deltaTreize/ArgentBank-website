@@ -21,7 +21,7 @@ export function Header() {
 			<NavLink className="main-nav-logo" to={"/"}>
 				<img
 					className="main-nav-logo-image"
-					src="../../../assets/argentBankLogo.png"
+					src="../../../assets/argentBankLogo.webp"
 					alt="Argent Bank Logo"
 				/>
 			</NavLink>

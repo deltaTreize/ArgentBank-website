@@ -63,7 +63,7 @@ export function SignIn() {
 				accounts: userDataJson.body.accounts,
 			};
 			dispatch(Login(userData));
-			navigate("/user/home");
+			navigate("/profile");
 		}
 	};
 	return (

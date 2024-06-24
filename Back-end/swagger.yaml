@@ -104,19 +104,57 @@ paths:
           description: Invalid Fields
         "500":
           description: Internal Server Error
+    
+  /user/categorys:
+    post:
+      security:
+        - Bearer: []
+      tags:
+        - Categorys Module
+      summary: User Profile API
+      description: API for fetching all categorys
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: User profile retrieved successully
+          schema:
+            $ref: "#/definitions/CategorysResponse"
+        "400":
+          description: Invalid Fields
+        "500":
+          description: Internal Server Error
 
   /user/account/operations/description:
     put:
       security:
         - Bearer: []
       tags:
-        - User Module
+        - Transactions Module
       summary: User Profile API
       description: API for add or update descrition of operations
       parameters:
+        - name: id
+          in: header
+          required: true
+          schema:
+            type: string
+          description: ID de l'utilisateur
+        - name: idaccount
+          in: header
+          required: true
+          schema:
+            type: string
+          description: ID du compte
+        - name: operationId
+          in: header
+          required: true
+          schema:
+            type: string
+          description: ID de l'opération
         - in: body
           name: body
-          description: add or update descrition of operations
+          description: Update operation description
           required: true
           schema:
             $ref: "#/definitions/description"
@@ -124,9 +162,9 @@ paths:
         - application/json
       responses:
         "200":
-          description: add or update descrition successully
+          description: add or update description successully
           schema:
-            $ref: "#/definitions/userResponse"
+            $ref: "#/definitions/UserResponse"
         "400":
           description: Invalid Fields
         "500":
@@ -137,13 +175,31 @@ paths:
       security:
         - Bearer: []
       tags:
-        - User Module
+        - Transactions Module
       summary: User Profile API
       description: API for add or update category of operations
       parameters:
+        - name: id
+          in: header
+          required: true
+          schema:
+            type: string
+          description: ID de l'utilisateur
+        - name: idaccount
+          in: header
+          required: true
+          schema:
+            type: string
+          description: ID du compte
+        - name: operationId
+          in: header
+          required: true
+          schema:
+            type: string
+          description: ID de l'opération
         - in: body
           name: body
-          description: add or update category of operations
+          description: Update operation category
           required: true
           schema:
             $ref: "#/definitions/category"
@@ -153,7 +209,7 @@ paths:
         "200":
           description: add or update category successully
           schema:
-            $ref: "#/definitions/userResponse"
+            $ref: "#/definitions/UserResponse"
         "400":
           description: Invalid Fields
         "500":
@@ -232,10 +288,13 @@ definitions:
         type: string
 
   description:
-    type: object
-    properties:
-      description:
-        type: string
+      type: object
+      required:
+        - description
+      properties:
+        description:
+          type: string
+          description: the new desciption of the operation
 
   category:
     type: object
@@ -307,6 +366,26 @@ definitions:
                         type: string
                       category:
                         type: string
+
+  CategorysResponse:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      body:
+        type: object
+        properties:
+          categorys:
+            type: array
+            items:
+              type: object
+              properties:
+                _id:
+                  type: string
+                category:
+                  type: string
 
   ApiResponse:
     type: object

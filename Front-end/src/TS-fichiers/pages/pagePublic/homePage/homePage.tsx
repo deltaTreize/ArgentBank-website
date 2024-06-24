@@ -16,7 +16,7 @@ export function HomePage() {
       </div>
       <section className="features">
         <div className="feature-item">
-          <img src="../assets/icon-chat.png" alt="Chat Icon" className="feature-icon" />
+          <img src="../assets/icon-chat.webp" alt="Chat Icon" className="feature-icon" />
           <h3 className="feature-item-title">Vous êtes notre priorité n°1</h3>
           <p>
           Besoin de parler à un représentant? Vous pouvez nous contacter via notre
@@ -25,7 +25,7 @@ export function HomePage() {
         </div>
         <div className="feature-item">
           <img
-            src="../assets/icon-money.png"
+            src="../assets/icon-money.webp"
             alt="Chat Icon"
             className="feature-icon"
           />
@@ -36,7 +36,7 @@ export function HomePage() {
         </div>
         <div className="feature-item">
           <img
-            src="../assets/icon-security.png"
+            src="../assets/icon-security.webp"
             alt="Chat Icon"
             className="feature-icon"
           />

@@ -6,6 +6,7 @@ import Spinner from "../../../components/spinner/spinner";
 import { Login } from "../../../redux/actions/action";
 import { AuthActionTypes, RootState, UserState } from "../../../redux/actions/typeAction";
 import "./userPage.scss";
+import { Account } from "../../../components/account/account";
 
 
 export function User() {
@@ -89,7 +90,7 @@ export function User() {
 							type="submit"
 							value="Save"
 						/>
-						<Button to={`/user/home`} text="Cancel" type={""} className={""} onClick={function (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void {
+						<Button to={`/profile`} text="Cancel" type={""} className={""} onClick={function (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void {
 							throw new Error("Function not implemented.");
 						} } />
 					</div>
@@ -99,29 +100,13 @@ export function User() {
 			<div className="allInfo-wrapper">
 				<div className="account-wrapper">
 					{accounts.map((data) =>
-							<section
-								className="account-userPage"
-								key={firstName + data.nbAccount}
-							>
-								<div className="account-userPage-wrapper">
-									<h3 className="account-title">{data.name}</h3>
-									<p className="account-amount">{data.solde.toFixed(2)}€</p>
-									<p className="account-amount-nbAccount">{data.nbAccount}</p>
-								</div>
-								<div className="account-content-wrapper cta">
-									<Button
-										to={`/user/home/${userId}/${data.nbAccount}`}
-										text=">"
-										type={""}
-										className={"transactions-button"}
-										onClick={function (
-											event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-										): void {
-											throw new Error("Function not implemented.");
-										}}
-									/>
-								</div>
-							</section>
+						<Account
+							key={firstName + data.nbAccount + userId}
+							firstName={firstName}
+							nbAccount={data.nbAccount}
+							solde={data.solde}
+							name={data.name}
+						/>
 					)}
 				</div>
 			</div>
