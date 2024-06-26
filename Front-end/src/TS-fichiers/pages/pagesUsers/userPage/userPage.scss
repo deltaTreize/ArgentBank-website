@@ -2,11 +2,14 @@
   flex: 1;
 }
 .bg-dark {
-	background-color: #fff;
+	background-color: #12002b;
 	min-height: 84vh;
 	.header-edit {
 		margin-bottom: 10px;
 		width: 100%;
+	}
+	h1{
+		color: white;
 	}
 	.allInfo-wrapper {
 		display: flex;
@@ -23,7 +26,33 @@
 	}
 }
 
-.edit {
+.edit{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 20px;
+	color: #2c3e50;
+	transition: all 0.5s linear;
+	form{
+		pointer-events: none;
+		opacity: 0;
+		transition: all 0.5s linear;
+	}
+	.editName{
+		position: absolute;
+		opacity: 1;
+		width: 30%;
+		font-size: 16px;
+		transition: all 0.5s 0.3s linear;
+		@media (min-width: 768px) {
+			width: 90px;
+			font-size: 16px;	
+		}
+	}
+}
+
+.edit-active {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -33,11 +62,17 @@
 	box-sizing: border-box;
 	padding: 0 20px;
 	color: #2c3e50;
+	transition: all 0.5s linear;
+	.editName{
+		opacity: 0;
+	}
 	form {
+		opacity: 1;
 		width: 100%;
-		display: flex;
+		pointer-events: all;
 		flex-direction: column;
 		align-items: center;
+		transition: all 0.5s linear;
 	}
 	.allLabel {
 		display: flex;

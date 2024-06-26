@@ -68,7 +68,7 @@ export function SignIn() {
 	};
 	return (
 		<main>
-			<div className="main bg-blur"></div>
+			<div className="main bg-dark"></div>
 			<section className="sign-in-content">
 				<i className="fa fa-user-circle sign-in-icon"></i>
 				<h1 className="title-signup">Se connecter</h1>

@@ -23,7 +23,7 @@ export function Account({firstName, nbAccount, solde, name}: Props) {
     <div className="account-content-wrapper cta">
       <Button
         to={``}
-        text=">"
+        text="View transactions"
         type={""}
         className={"transactions-button"}
         onClick={function (

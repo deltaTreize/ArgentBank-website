@@ -18,7 +18,13 @@ export function User() {
 	const lastName = useSelector((state: RootState) => state.user.lastName);
 	const email = useSelector((state: RootState) => state.user.email);
 	const token = useSelector((state: RootState) => state.token.token);
+	const [isEditActive, setIsEditActive] = useState<boolean>(false);
 	const dispatch:Dispatch<AuthActionTypes>= useDispatch();
+
+
+	function handleEdit() {
+		setIsEditActive(!isEditActive);
+	}
 
 	const [userNameValue, setUserNameValue] = useState<string>(userName);
 
@@ -59,9 +65,10 @@ export function User() {
 	return (
 		<main className="main bg-dark">
 						<div className="header-edit">
-				<h1>Vos Informations</h1>
+				<h1>Welcome back <br/>{firstName} {lastName}!</h1>
 			</div>
-			<div className="edit">
+			<div className={isEditActive ? 'edit-active' : 'edit'}>
+				<Button to={``} text="Edit Name" type={""} className={"editName"} onClick={handleEdit} />
 				<form action="" onSubmit={handleChange}>
 					<div className="allLabel">
 						<label htmlFor="userName">
@@ -90,9 +97,7 @@ export function User() {
 							type="submit"
 							value="Save"
 						/>
-						<Button to={`/profile`} text="Cancel" type={""} className={""} onClick={function (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void {
-							throw new Error("Function not implemented.");
-						} } />
+						<Button to={``} text="Cancel" type={""} className={""} onClick={handleEdit } />
 					</div>
 				</form>
 			</div>

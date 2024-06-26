@@ -7,7 +7,7 @@ import "./header.scss";
 
 export function Header() {
 	const token = useSelector((state: RootState) => state.token.token);
-	const userName = useSelector((state: RootState) => state.user.userName);
+	const firstName = useSelector((state: RootState) => state.user.firstName);
 	const logged = token !== "" ? true : false;
 	const dispatch = useDispatch();
 
@@ -28,14 +28,14 @@ export function Header() {
 			<nav className="connectionLinks">
 				{logged && (
 					<div className="userName">
-						{userName}
 						<i className="fa fa-user-circle"></i>
+						{firstName}
 					</div>
 				)}
 				{!logged && (
 					<NavLink className="main-nav-item" id="signInLink" to={"/sign-In"}>
 						<i className="fa fa-user-circle"></i>
-						Se connecter
+						Sign In
 					</NavLink>
 				)}
 				{logged && (
@@ -45,7 +45,7 @@ export function Header() {
 						to={"/"}
 						onClick={handleLogout}
 					>
-						<i className="fa fa-power-off"></i>
+						Sign Out
 					</NavLink>
 				)}
 			</nav>

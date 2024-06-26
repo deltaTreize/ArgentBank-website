@@ -2,25 +2,9 @@ main{
 	position: relative;
 	min-height: 84vh;
 }
-.bg-blur {
-	position: absolute;
-	background-image: url('../../../../../public/assets/bank-tree-320.webp');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 25%;
-	filter: blur(10px);
-	-webkit-filter: blur(10px);
+.bg-dark {
 	height: 100%;
 	width: 100%;
-	@media (min-width: 425px) {
-		background-image: url('../../../../../public/assets/bank-tree-425.webp');
-	}
-	@media (min-width: 768px) {
-		background-image: url('../../../../../public/assets/bank-tree-768.webp');
-	}
-	@media (min-width: 1024px) {
-		background-image: url('../../../../../public/assets/bank-tree-1024.webp');
-	}
 }
 	.sign-in-content {
 		box-sizing: border-box;
