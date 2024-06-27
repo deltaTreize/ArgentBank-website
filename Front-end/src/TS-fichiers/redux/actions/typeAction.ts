@@ -29,21 +29,12 @@ export interface UserState {
 	accounts: Account[];
 }
 
-export interface operations{
-	_id: number,
-	date: string,
-	title: string,
-	montant: number,
-	description: string,
-	category: string,
-}
 
 export interface Account {
 	_id: number;
 	name: string;
 	nbAccount: string;
 	solde: number;
-	operations: operations[];
 }
 
 export interface RootState {
