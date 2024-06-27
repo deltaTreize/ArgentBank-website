@@ -228,6 +228,25 @@ definitions:
               type: string
             solde:
               type: number
+            operations:
+              type: array
+              items:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                  date:
+                    type: string
+                    format: date
+                  title:
+                    type: string
+                  montant:
+                    type: number
+                  description:
+                    type: string
+                  category:
+                    type: string
+
 
 
   Login:
@@ -306,6 +325,24 @@ definitions:
                   type: string
                 solde:
                   type: number
+                operations:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      date:
+                        type: string
+                        format: date
+                      title:
+                        type: string
+                      montant:
+                        type: number
+                      description:
+                        type: string
+                      category:
+                        type: string
 
   CategoriesResponse:
     type: object
