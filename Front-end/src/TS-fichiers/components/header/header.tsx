@@ -7,7 +7,7 @@ import "./header.scss";
 
 export function Header() {
 	const token = useSelector((state: RootState) => state.token.token);
-	const firstName = useSelector((state: RootState) => state.user.firstName);
+	const userName = useSelector((state: RootState) => state.user.userName);
 	const logged = token !== "" ? true : false;
 	const dispatch = useDispatch();
 
@@ -29,7 +29,7 @@ export function Header() {
 				{logged && (
 					<div className="userName">
 						<i className="fa fa-user-circle"></i>
-						{firstName}
+						{userName}
 					</div>
 				)}
 				{!logged && (

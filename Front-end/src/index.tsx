@@ -4,19 +4,18 @@ import { Provider } from "react-redux";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import App from "./App";
-import Spinner from "./TS-fichiers/components/spinner/spinner";
 import persistor from "./TS-fichiers/redux/reducers/store";
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
-	<Provider store={persistor}>
+	<Provider  store={persistor}>
 		<React.StrictMode>
-			<PersistGate loading={<Spinner />} persistor={persistStore(persistor)}>
+			<PersistGate persistor={persistStore(persistor)}>
 				<App />
-			</PersistGate>
+			</PersistGate> 
 		</React.StrictMode>
-	</Provider>
+	 </Provider> 
 );
 
 // If you want to start measuring performance in your app, pass a function
